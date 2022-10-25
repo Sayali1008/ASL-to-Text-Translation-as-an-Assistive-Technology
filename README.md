@@ -1,0 +1,1 @@
+# ASL-to-Text-Translation-as-an-Assistive-Technology
