@@ -1,0 +1,11 @@
+numpy
+pandas
+opencv-python
+Pillow
+matplotlib
+tabulate
+tqdm
+scikit-learn
+torch
+torchvision
+// set auto camera detect to 0
