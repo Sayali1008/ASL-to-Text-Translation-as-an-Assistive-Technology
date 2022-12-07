@@ -23,7 +23,7 @@ from torchvision.datasets import ImageFolder
 from torch.utils.data import TensorDataset
 from torchvision.utils import make_grid
 import torchvision.models as models
-%matplotlib inline
+# %matplotlib inline
 from copy import copy
 from tqdm import tqdm 
 
@@ -73,7 +73,7 @@ test_tfms = tt.Compose([tt.ToTensor()])
 #TEST DATA - RASBAND DATASET 870 IMAGES
 batch_size = 32
 #CHANGE PATH ACCORDINGLY
-test_dataset = ImageFolder('../data/rasband_data')
+test_dataset = ImageFolder('./data/rasband_data')
 test_ds, _ = random_split(test_dataset, [len(test_dataset), 0])
 test_ds.dataset.transform = tt.Compose([tt.ToTensor()])
 test_dl = DataLoader(test_ds, batch_size, num_workers=2, pin_memory=True)
@@ -149,7 +149,7 @@ class ASLResnet(ImageClassificationBase):
 model = to_device(ASLResnet(), device)
 
 #CHANGE PATH ACCORDINGLY
-model.load_state_dict(torch.load('../models/baseline_resnet34.pth'))
+model.load_state_dict(torch.load('./models/baseline_resnet34.pth'))
 model.to(device)
 
 
@@ -222,7 +222,7 @@ latencies =[]
 disk_sizes =[]
 
 #CHANGE PATH ACCORDINGLY
-base_path = "../models/imp_no_rewind/"
+base_path = "./models/imp_no_rewind/"
 
 for i, path in enumerate(model_paths, start=1):
   model = ASLResnet()
